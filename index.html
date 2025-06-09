@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p, h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .result-box {
+            background-color: #fff;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors Game 🎮</h1>
+    <form method="POST">
+        <button type="submit" name="choice" value="rock">🪨 Rock</button>
+        <button type="submit" name="choice" value="paper">📄 Paper</button>
+        <button type="submit" name="choice" value="scissors">✂️ Scissors</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <p>You chose: <strong>{{ user }}</strong></p>
+        <p>Computer chose: <strong>{{ computer }}</strong></p>
+        <h3>{{ result }}</h3>
+    </div>
+    {% endif %}
+</body>
+</html>
